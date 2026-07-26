@@ -122,4 +122,4 @@ Once set up, `python main.py` launches the menu:
 
 ---
 
-**Course:** <!-- module/course name --> · **Institution:** African Leadership University (ALU) · **Framework:** GCGO
+
