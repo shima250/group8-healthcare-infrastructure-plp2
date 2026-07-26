@@ -22,7 +22,7 @@ SafeCycle lets a user register, log period entries, view predictions (next perio
 
 | Name | Role | Files Owned | Contribution |
 |---|---|---|---|
-| Ebenezer Kabare Shima | Database | `db.py` (or `db_mysql.py`) | Schema, connection logic, CRUD-supporting functions (`create_user`, `add_period_entry`, `get_history`, etc.) — sole owner of all direct database access |
+| Ebenezer Kabare Shima | Database | `db.py` (or `db_mysql.py`) | Schema, connection logic, CRUD-supporting functions (`create_user`, `add_period_entry`, `get_history`, etc.)  sole owner of all direct database access |
 | Digne Gahamanyi Sugira | Architecture & Integration Lead | `main.py` | File/class structure, menu loop, wiring to `db.py` functions |
 | Grace Mukire | Feature Logic Lead (Create/Read) | `features.py` (top half) | `register_user`, `log_period`, `predict_next_period`, `view_history`, `next_health_tip` |
 | Job Lamek Odhiambo Ayuko | Feature Logic Lead (Update/Delete) & Validation | `features.py` (bottom half), `validation.py` | `update_period`, `delete_period`, `update_cycle_length`, input validation and error handling across all menu options |
@@ -83,11 +83,11 @@ SafeCycle supports **both MySQL (Aiven) and SQLite**, and picks automatically: o
 3. <!-- TODO: confirm with Shima whether SSL needs to be configured explicitly for the Aiven connection, or whether it's handled by the connector's defaults. -->
 
 ### SQLite — automatic fallback
-1. No setup needed. If MySQL isn't reachable (missing package, bad credentials, network issue), the app creates/uses a local file automatically — default path `safecycle.db`, configurable via the `SC_SQLITE_PATH` environment variable.
+1. No setup needed. If MySQL isn't reachable (missing package, bad credentials, network issue), the app creates/uses a local file automatically  default path `safecycle.db`, configurable via the `SC_SQLITE_PATH` environment variable.
 2. To reset local data, delete the SQLite file and rerun the app.
 
 ### Initializing the schema
-Run `python db.py` directly to create tables and self-test the full CRUD flow (create a user, log entries, read history, update, delete) — this is a good first step to confirm everything is wired up correctly before running `main.py`.
+Run `python db.py` directly to create tables and self-test the full CRUD flow (create a user, log entries, read history, update, delete)  this is a good first step to confirm everything is wired up correctly before running `main.py`.
 
 ### Why this database was chosen
 MySQL (Aiven) was the primary target for cloud persistence and shared team access. Rather than making a one-time manual decision, `db.py` was designed to try Aiven first and fall back to SQLite automatically if the connection isn't available — so the app is never blocked by a database outage, and the rest of the codebase (`main.py`, `features.py`) never needs to change based on which backend ends up active.
@@ -120,6 +120,5 @@ Once set up, `python main.py` launches the menu:
 
 <!-- TODO: list anything not finished by submission -->
 
----
 
-**Course:** <!-- module/course name --> · **Institution:** African Leadership University (ALU) · **Framework:** GCGO
+
