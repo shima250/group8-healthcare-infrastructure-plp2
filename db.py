@@ -70,7 +70,12 @@ class Database:
 
     # -- domain-specific methods -------------------------------------------
     # (Kept here, not in User/CycleTracker, so those classes never touch SQL)
+    def get_all_users(self):
+    """Return all users from the database."""
+        return self.fetch_all("SELECT * FROM users ORDER BY id ASC")
 
+
+    
     def insert_user(self, name, avg_cycle_length):
         new_id, _ = self.execute(
             "INSERT INTO users (name, avg_cycle_length) VALUES (?, ?)",
