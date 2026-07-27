@@ -36,6 +36,28 @@ def register_flow(db):
     print(f"\nThanks, {name}! You're all set up.\n")
     return user
 
+def login_or_register_flow(db):
+    users = db.get_all_users()
+
+    if users:
+        print("\nExisting users found:")
+        for u in users:
+            print(f"  {u['id']}. {u['name']} (cycle: {u['avg_cycle_length']} days)")
+        print(f"  {len(users) + 1}. Register as new user")
+
+        choice = InputValidator.get_valid_int(
+            "Choose a user number: ",
+            min_value=1, max_value=len(users) + 1
+        )
+
+        if choice <= len(users):
+            selected = users[choice - 1]
+            user = User.load(db, selected['id'])
+            print(f"\nWelcome back, {user.name}!\n")
+            return user
+
+    return register_flow(db)
+
 
 def handle_log_period(tracker):
     print("\n-- Log a New Period --")
@@ -112,7 +134,7 @@ def handle_health_tip(tips):
 def main():
     db = Database("safecycle.db")
     show_welcome()
-    user = register_flow(db)
+    user = login_or_register_flow(db)
     tracker = CycleTracker(db, user)
     tips = HealthTips()
 
