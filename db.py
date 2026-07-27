@@ -71,7 +71,7 @@ class Database:
     # -- domain-specific methods -------------------------------------------
     # (Kept here, not in User/CycleTracker, so those classes never touch SQL)
     def get_all_users(self):
-    """Return all users from the database."""
+        """Return all users from the database."""
         return self.fetch_all("SELECT * FROM users ORDER BY id ASC")
 
 
