@@ -116,9 +116,7 @@ Once set up, `python main.py` launches the menu:
 - Known edge cases tested: <!-- TODO: e.g. invalid dates, duplicate users, empty history -->
 - QA question list (with exact file/function references) prepared separately for presentation — see `<link or filename>`.
 
-## Known Issues / Future Work
 
-<!-- TODO: list anything not finished by submission -->
 
 
 
