@@ -3,14 +3,14 @@
 A terminal-based Python app for period tracking and health education, built for rural adolescent girls as part of ALU's GCGO framework project.
 
 ## Table of Contents
-- [Overview](#overview)
-- [Team & Contributions](#team--contributions)
-- [Project Structure](#project-structure)
-- [Setup Instructions](#setup-instructions)
-- [Database Configuration](#database-configuration)
-- [Running the App](#running-the-app)
-- [Testing Notes](#testing-notes)
-- [Known Issues / Future Work](#known-issues--future-work)
+- Overview
+- Team Contributions
+- Project structure
+- Setup Instructions
+- Database Configuration
+- Running the App
+- Testing Notes
+- Known Issues/Future work
 
 ## Overview
 
